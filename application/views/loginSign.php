@@ -16,6 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="container" style="width: 1000px;text-align: center;">
     <div class="row">
+      <h1>q</h1>
         <div class="col-md-5">
             <div class="row" style="padding: 116px 38px;">
                   <h1 class="h1">Bienvenu sur TAKALO</h1>
