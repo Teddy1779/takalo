@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> </title>
+    <title>resultat</title>
     <link rel="stylesheet" href="styleMenu.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -90,29 +90,26 @@
 
     <div class="container">
       <div class="search-box" style="text-align: center;">
-          <h1 class="h2">Voici vos objets </h1>
+          <h1 class="h2">Resultat du recherche</h1>
       </div><br>
 
       <div class="images">
-          <form action="<?php echo site_url('Login/recherche'); ?>" class="d-flex" role="search" method="post">
+          <!-- <form action="<?php echo site_url('Login/recherche'); ?>" class="d-flex" role="search">
                 <input class="form-control" type="search" name="solotena" placeholder="Search" aria-label="Search">
                 <select name="categorie" id="" class="form-control">
                   <option hidden>Categorie</option>
-                  <?php for ($i=0; $i < count($categories); $i++) { ?>
-                     <option value="<?php echo $categories[$i]['idcategorie']; ?>"><?php echo $categories[$i]['nom']; ?></option>
-                 <?php } ?>
-                 
+                  <option value="">Lolo</option>
                 </select>
                 <input class="btn btn-outline-dark" type="submit" value="Search">
-          </form>
-      </div><br>  
+          </form> -->
+      </div><br>
        
       <div class="images">
-        <?php for ($i=0; $i < count($objets); $i++) { ?>
+        <?php for ($i=0; $i < count($resultat); $i++) { ?>
             <div class="image-box" data-name="spiderman">
-            <img src="<?php echo site_url('assets/img/'.$objets[$i]['photo'].'') ?> " alt="">
+            <img src="<?php echo site_url('assets/img/'.$resultat[$i]['photo'].'') ?> " alt="">
             <h6></h6>
-            <h6><?php echo $objets[$i]['nom']; ?><br><a href="<?php echo site_url('Login/modifobjet/'.$objets[$i]['idobjet'].''); ?>" class="btn btn-dark">Modifier</a></h6>
+             <h6><?php echo $resultat[$i]['nom']; ?><br><a href="<?php // echo site_url('Login/modifobjet/'.$resultat[$i]['idobjet'].''); ?>" class="btn btn-drk"></a></h6> 
         </div>
       <?php  } ?>
       </div>

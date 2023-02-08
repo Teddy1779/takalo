@@ -2,10 +2,10 @@
     function verify_login ($nom,$mdp,$data){
         for($i=0;$i<count($data);$i++){            
             if ($nom == $data[$i]['nom'] && $mdp == $data[$i]['mdp']){                
-                return 0;
+                return $data[$i]['iduser'];
             }
         }
-        return 1;
+        return 0;
     }
     function verify_sign ($pass,$mdp){
         if ($mdp == $pass){			

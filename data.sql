@@ -28,6 +28,7 @@ create table demande (
     date_demande DATE,
     idobjetsend INT,
     idobjetreceive INT,
+    confirmation VARCHAR(255),
     FOREIGN KEY (idsend) REFERENCES user(iduser),
     FOREIGN KEY (idreceive) REFERENCES user(iduser),
     FOREIGN KEY (idobjetsend) REFERENCES objet(idobjet),
@@ -41,7 +42,6 @@ create table confirmer (
     dateconfirmer DATE,
     FOREIGN KEY (iddemande) REFERENCES demande(iddemande)
 );
-
 
 INSERT INTO user VALUES(null,'test','test');
 INSERT INTO user VALUES(null,'jean','jean');
@@ -76,4 +76,10 @@ INSERT INTO objet VALUES(null,1,4,'cartable','cartable classique de couleur noir
 INSERT INTO objet VALUES(null,3,4,'hache','hache classique pour coupe du bois pour la chemine ou le barbecue','19.jpg',15000);
 INSERT INTO objet VALUES(null,2,4,'cle usb','cle de 64GB en forme de sport bugatti','22.jpg',65500);
 
+INSERT INTO demande VALUES(null,1,4,'2023-02-07',1,16,'true');
+INSERT INTO demande VALUES(null,2,3,'2023-02-08',5,10,'true');
+INSERT INTO demande VALUES(null,3,2,'2023-02-09',9,6,'false');
+INSERT INTO demande VALUES(null,4,1,'2023-02-10',14,3,'false');
 
+INSERT INTO confirmer VALUES(null,1,'2023-02-12');
+INSERT INTO confirmer VALUES(null,2,'2023-02-13');

@@ -1,268 +1,119 @@
+
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com -->
-<html lang="en">
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page</title>
+    <meta charset="UTF-8">
+    <title> </title>
+    <link rel="stylesheet" href="styleMenu.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <link href="<?php echo site_url('assets/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+   <link href="<?php echo site_url('assets/style/headers.css');?>" rel="stylesheet">
+   <script src="<?php echo site_url('assets/dist/js/bootstrap.bundle.min.js');?>"></script>
+   <!-- ... fontawsom -->
+   <link rel="stylesheet" href="<?php echo site_url('assets/fontawesome-5/css/all.css'); ?>">
+   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/swiper-bundle.min.css');?>" />
-
-    <!-- CSS -->  
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/styleAutre.css'); ?>" />
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/styleMenu.css'); ?>" />
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/button.css');?>" />
+<!-- ..... -->
+<link rel="stylesheet" href="<?php echo site_url('assets/css/styleAcceuil.css');?>">
+<link rel="stylesheet" href="<?php echo site_url('assets/css/styleMenu.css'); ?>" />
+<script src="<?php echo site_url('assets/script/scriptAcceuil.js'); ?>"></script>
   </head>
   <body>
-    <div class="sidebar">
-      <div class="logo-details">
-        <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">MyProject</div>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+      <a href="<?php echo site_url('Login/acceuil/'.$_SESSION['iduser']); ?>"><div class="logo_name">Takalo</div></a>
         <i class='bx bx-menu' id="btn" ></i>
-      </div>
-      <ul class="nav-list">
-        <li>
-          <i class='bx bx-search' ></i>
-          <input type="text" placeholder="Search...">
-          <span class="tooltip">Search</span>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-grid-alt'></i>
-            <span class="links_name">Dashboard</span>
-          </a>
-           <span class="tooltip">Dashboard</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class='bx bx-user' ></i>
-              <span class="links_name">User</span>
-            </a>
-            <span class="tooltip">User</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class='bx bx-chat' ></i>
-              <span class="links_name">Messages</span>
-            </a>
-            <span class="tooltip">Messages</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class='bx bx-pie-chart-alt-2' ></i>
-              <span class="links_name">Analytics</span>
-            </a>
-            <span class="tooltip">Analytics</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class='bx bx-folder' ></i>
-              <span class="links_name">File Manager</span>
-            </a>
-            <span class="tooltip">Files</span>
-          </li>
-          <li>
-            <a href="#">
-           <i class='bx bx-cart-alt' ></i>
-           <span class="links_name">Order</span>
-          </a>
-         <span class="tooltip">Order</span>
-        </li>
-       <li>
-         <a href="#">
-           <i class='bx bx-heart' ></i>
-           <span class="links_name">Saved</span>
-         </a>
-         <span class="tooltip">Saved</span>
-        </li>
-       <li>
-         <a href="#">
-           <i class='bx bx-cog' ></i>
-           <span class="links_name">Setting</span>
-          </a>
-          <span class="tooltip">Setting</span>
-        </li>
-        <li class="profile">
-          <div class="profile-details">
-            <img src="assets/img/profile/profile1.jpg" alt="profileImg">
-            <div class="name_job">
-              <div class="name">Prem Shahi</div>
-              <div class="job">Web designer</div>
-            </div>
-          </div>
-          <i class='bx bx-log-out' id="log_out" ></i>
-        </li>
-      </ul>
     </div>
-    <div class="container" style="margin-top: 15%;margin-left: 50px;">
-          <div id="title">
-            <img src="assets/img/profile/profile1.jpg" alt="" />
-          </div>
-          <div class="container swiper">
-            <div class="slide-container">
-              <div class="card-wrapper swiper-wrapper">
-                <div class="card swiper-slide">
-                  <div class="image-box">
-                    <img src="assets/img/showImg/fullDev.jpg" alt="" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="assets/img/profile/profile1.jpg" alt="" />
-                    <div class="name-job">
-                      <h3 class="name">David Cardlos</h3>
-                      <h4 class="job">Full Stack Developer</h4>
-                    </div>
-                    <button class="button">Click Me</button>
-                  </div>
-                </div>
-              <div class="card swiper-slide">
-                <div class="image-box">
-                  <img src="assets/img/showImg/photographer.jpg" alt="" />
-                </div>
-                <div class="profile-details">
-                  <img src="assets/img/profile/profile2.jpg" alt="" />
-                  <div class="name-job">
-                    <h3 class="name">Siliana Ramis</h3>
-                    <h4 class="job">Photographer</h4>
-                  </div>
-                  <button class="button">Click Me</button>
-                </div>
-              </div>
-              <div class="card swiper-slide">
-                <div class="image-box">
-                  <img src="assets/img/showImg/dataAna.jpg" alt="" />
-                </div>
-                <div class="profile-details">
-                  <img src="assets/img/profile/profile3.jpg" alt="" />
-                  <div class="name-job">
-                    <h3 class="name">Richard Bond</h3>
-                    <h4 class="job">Data Analyst</h4>
-                  </div>
-                  <button class="button">Click Me</button>
-                </div>
-              </div>
-              <div class="card swiper-slide">
-                <div class="image-box">
-                  <img src="assets/img/showImg/appDev.jpg" alt="" />
-                </div>
-                <div class="profile-details">
-                  <img src="assets/img/profile/profile4.jpg" alt="" />
-                  <div class="name-job">
-                    <h3 class="name">Priase</h3>
-                    <h4 class="job">App Developer</h4>
-                  </div>
-                  <button class="button">Click Me</button>
-                </div>
-              </div>
-              <div class="card swiper-slide">
-                <div class="image-box">
-                  <img src="assets/img/showImg/blogger.jpg" alt="" />
-                </div>
-                <div class="profile-details">
-                  <img src="assets/img/profile/profile5.jpg" alt="" />
-                  <div class="name-job">
-                    <h3 class="name">James Laze</h3>
-                    <h4 class="job">Blogger</h4>
-                  </div>
-                  <button class="button">Click Me</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-button-next swiper-navBtn"></div>
-          <div class="swiper-button-prev swiper-navBtn"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-        
-        <hr>
-        
-        <!-- faharoa -->
-        
-        <hr>
+    <ul class="nav-list">
+      <li>
+        <a href="<?php echo site_url('Login/autre/'.$_SESSION['iduser']); ?>">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Voir autre objet</span>
+        </a>
+        <span class="tooltip">Voir autre objet</span>
+      </li>
+      <li>
+      <a href="<?php echo site_url('Login/accept'); ?>">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Demande d'objet</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li>
+       <a href="<?php echo site_url('Login/demandeobjet'); ?>">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Mes demandes</span>
+       </a>
+       <span class="tooltip">Messages</span>
+     </li>
+     <li>
+       <a href="<?php echo site_url('Login/historique'); ?>">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Historique</span>
+       </a>
+       <span class="tooltip">Historique</span>
+     </li>
+     <li>
+       <a href="<?php echo site_url('Login/echangeEff'); ?>">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Echange</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li>
+       <a href="<?php echo site_url('Login/logout'); ?>">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Deconnexion</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="profile.jpg" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Prem Shahi</div>
+             <div class="job">Web designer</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
 
-        <div id="title" style="margin-top: 2%;">
-        <p style="color:white"><?php echo $this->session->nom; ?></p>
-          <img src="assets/img/profile/profile1.jpg" alt="" />
+    <!-- ...... -->
+    <section class="home-section">
+
+    <div class="container">
+      <?php for($j=0;$j<count($iduser);$j++) { ?>
+        <div class="search-box" style="text-align: center;">
+          <!-- <i class="bx bx-search"></i> -->
+          <h1 class="h2">Voici les objets de : <?php echo $iduser[$j]['nom']; ?></h1>
         </div>
-        <div class="container swiper">
-          <div class="slide-container">
-            <div class="card-wrapper swiper-wrapper">
-              <div class="card swiper-slide">
-                <div class="image-box">
-                  <img src="assets/img/showImg/fullDev.jpg" alt="" />
-                </div>
-                <div class="profile-details">
-                  <img src="assets/img/profile/profile1.jpg" alt="" />
-                  <div class="name-job">
-                    <h3 class="name">David Cardlos</h3>
-                    <h4 class="job">Full Stack Developer</h4>
-                  </div>
-                  <button class="button">Click Me</button>
-                </div>
-              </div>
-              <div class="card swiper-slide">
-                <div class="image-box">
-                  <img src="assets/img/showImg/photographer.jpg" alt="" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="assets/img/profile/profile2.jpg" alt="" />
-                    <div class="name-job">
-                      <h3 class="name">Siliana Ramis</h3>
-                      <h4 class="job">Photographer</h4>
-                    </div>
-                    <button class="button">Click Me</button>
-                  </div>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-box">
-                    <img src="assets/img/showImg/dataAna.jpg" alt="" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="assets/img/profile/profile3.jpg" alt="" />
-                    <div class="name-job">
-                      <h3 class="name">Richard Bond</h3>
-                      <h4 class="job">Data Analyst</h4>
-                    </div>
-                    <button class="button">Click Me</button>
-                  </div>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-box">
-                    <img src="assets/img/showImg/appDev.jpg" alt="" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="assets/img/profile/profile4.jpg" alt="" />
-                    <div class="name-job">
-                      <h3 class="name">Priase</h3>
-                      <h4 class="job">App Developer</h4>
-                    </div>
-                    
-                    <button class="button">Click Me</button>
-                  </div>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-box">
-                    <img src="assets/img/showImg/blogger.jpg" alt="" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="assets/img/profile/profile5.jpg" alt="" />
-                    <div class="name-job">
-                      <h3 class="name">James Laze</h3>
-                      <h4 class="job">Blogger</h4>
-                    </div>
-                    <button class="button">Click Me</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-button-next swiper-navBtn"></div>
-            <div class="swiper-button-prev swiper-navBtn"></div>
-            <div class="swiper-pagination"></div>
+        <div class="images">
+          <?php for ($i=0; $i < count($all); $i++) { 
+              if($iduser[$j]['iduser']==$all[$i]['iduser']) { ?>
+              <div class="image-box" data-name="spiderman">
+              <img src="<?php echo site_url('assets/img/'.$all[$i]['photo'].'') ?> " alt="">
+              <h6></h6>
+              <h6 style="color:gray;font-size:20px;font-weight:bold" ><?php echo $all[$i]['nom']; ?><br><a href="<?php echo site_url('Login/echange/'.$all[$i]['idobjet'].'');?>"><button class="btn btn-dark">Echanger</button></a></h6>
           </div>
+        <?php  } } ?>
         </div>
-        <script src="<?php echo site_url('assets/script/swiper-bundle.min.js'); ?>"></script>
-        <script src="<?php echo site_url('assets/script/scriptAutre1.js');?>"></script>
-        <script src="<?php echo site_url('assets/script/scriptAutre2.js'); ?>"></script>
+      <?php } ?>
+    </div>
+    <footer class="py-3 my-4" style="background-color: white;">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ETU001754 ANDRIAMIHARISOA Mananjara </a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ETU001762 ANDRIANASINORO Hasina </a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ETU001779 IHARIMIMA Teddy</a></li>
+    </ul>
+    <p class="text-center text-muted">&copy; 2023 Company, Inc</p>
+    </footer>
+  </section>
+  <script src="<?php echo site_url('assets/script/scriptMenu.js'); ?>"></script>
   </body>
 </html>

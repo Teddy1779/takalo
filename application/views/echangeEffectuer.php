@@ -88,34 +88,35 @@
   <!-- Manoratra ao @droite -->
   <section class="home-section">
 
-    <div class="container">
-      <div class="search-box" style="text-align: center;">
-          <h1 class="h2">Voici vos objets </h1>
-      </div><br>
-
-      <div class="images">
-          <form action="<?php echo site_url('Login/recherche'); ?>" class="d-flex" role="search" method="post">
-                <input class="form-control" type="search" name="solotena" placeholder="Search" aria-label="Search">
-                <select name="categorie" id="" class="form-control">
-                  <option hidden>Categorie</option>
-                  <?php for ($i=0; $i < count($categories); $i++) { ?>
-                     <option value="<?php echo $categories[$i]['idcategorie']; ?>"><?php echo $categories[$i]['nom']; ?></option>
-                 <?php } ?>
-                 
-                </select>
-                <input class="btn btn-outline-dark" type="submit" value="Search">
-          </form>
-      </div><br>  
-       
-      <div class="images">
-        <?php for ($i=0; $i < count($objets); $i++) { ?>
-            <div class="image-box" data-name="spiderman">
-            <img src="<?php echo site_url('assets/img/'.$objets[$i]['photo'].'') ?> " alt="">
-            <h6></h6>
-            <h6><?php echo $objets[$i]['nom']; ?><br><a href="<?php echo site_url('Login/modifobjet/'.$objets[$i]['idobjet'].''); ?>" class="btn btn-dark">Modifier</a></h6>
-        </div>
-      <?php  } ?>
-      </div>
+    <div class="container"style="text-align: center;" >
+    <span class="badge bg-success"> liste des echanges effectuer par utilisateur</span>
+    <br>
+    <br>
+    <br>
+    <div class="table-responsive" >
+    <div class="text-center">
+            <table class="table">
+                <thead>
+                    <tr class="table-dark">
+                        <th>Nom de l'utilisateur</th>
+                        <th>Nombre d'echange</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <?php for($i=0; $i < count($use); $i++) { 
+                    if($use[$i]['mdp'] != "admin"){
+                    ?>
+                    <tr class="table-light">
+                        <td><?php echo $use[$i]['nom']; ?></td>
+                        <td><?php echo $isany[$i]; ?></td>
+                    </tr>
+                    <?php }} ?>
+                </tbody>
+            </table>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    </div>
+    </div>
+    </div>
     </div>
     <footer class="py-3 my-4" style="background-color: white;">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">

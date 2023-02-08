@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> </title>
+    <title>Historique</title>
     <link rel="stylesheet" href="styleMenu.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -17,6 +17,7 @@
    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
 <!-- ..... -->
+
 <link rel="stylesheet" href="<?php echo site_url('assets/css/styleAcceuil.css');?>">
 <link rel="stylesheet" href="<?php echo site_url('assets/css/styleMenu.css'); ?>" />
 <script src="<?php echo site_url('assets/script/scriptAcceuil.js'); ?>"></script>
@@ -86,37 +87,31 @@
     </ul>
   </div>
   <!-- Manoratra ao @droite -->
-  <section class="home-section">
 
-    <div class="container">
-      <div class="search-box" style="text-align: center;">
-          <h1 class="h2">Voici vos objets </h1>
-      </div><br>
-
-      <div class="images">
-          <form action="<?php echo site_url('Login/recherche'); ?>" class="d-flex" role="search" method="post">
-                <input class="form-control" type="search" name="solotena" placeholder="Search" aria-label="Search">
-                <select name="categorie" id="" class="form-control">
-                  <option hidden>Categorie</option>
-                  <?php for ($i=0; $i < count($categories); $i++) { ?>
-                     <option value="<?php echo $categories[$i]['idcategorie']; ?>"><?php echo $categories[$i]['nom']; ?></option>
-                 <?php } ?>
-                 
-                </select>
-                <input class="btn btn-outline-dark" type="submit" value="Search">
-          </form>
-      </div><br>  
-       
-      <div class="images">
-        <?php for ($i=0; $i < count($objets); $i++) { ?>
-            <div class="image-box" data-name="spiderman">
-            <img src="<?php echo site_url('assets/img/'.$objets[$i]['photo'].'') ?> " alt="">
-            <h6></h6>
-            <h6><?php echo $objets[$i]['nom']; ?><br><a href="<?php echo site_url('Login/modifobjet/'.$objets[$i]['idobjet'].''); ?>" class="btn btn-dark">Modifier</a></h6>
-        </div>
-      <?php  } ?>
-      </div>
+  <section class="home-section" style="background-color: white;">
+    <div class="container" >
+      <h3 class="badge bg-secondary" style="font-weight: bolder;font-size: 22px;">Historique</h3><br>
+        <table class="table table-hover">
+            <tr class="table-dark">
+                <td>Date d'Echange</td>
+                <td>Ancien proprio</td>
+                <td>Nouveau proprio</td>
+                <td>Objet nouveau de l'ancien proprio</td>
+                <td>Objet nouveau du nouvelle proprio</td>
+            </tr>
+            <?php for ($i=0; $i < count($historique); $i++) { ?>
+            <tr class="table-light">
+                <td><?php echo $historique[$i]['dateechange']; ?></td>
+                <td><?php echo $historique[$i]['nomoldproprio']; ?></td>
+                <td><?php echo $historique[$i]['nomnewproprio']; ?></td>
+                <td><?php echo $historique[$i]['nomazoold']; ?></td>
+                <td><?php echo $historique[$i]['nomazonew']; ?></td>
+            </tr>
+           <?php } ?>
+            
+        </table>
     </div>
+    
     <footer class="py-3 my-4" style="background-color: white;">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ETU001754 ANDRIAMIHARISOA Mananjara </a></li>

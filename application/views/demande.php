@@ -9,7 +9,6 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <link href="<?php echo site_url('assets/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
-   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
    <link href="<?php echo site_url('assets/style/headers.css');?>" rel="stylesheet">
    <script src="<?php echo site_url('assets/dist/js/bootstrap.bundle.min.js');?>"></script>
    <!-- ... fontawsom -->
@@ -27,7 +26,7 @@
 <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
-      <a href="<?php echo site_url('Login/acceuil/'.$_SESSION['iduser']); ?>"><div class="logo_name">Takalo</div></a>
+        <a style="text-decoration:none" href="<?php echo site_url('Login/acceuil/'.$_SESSION['iduser']); ?>"><div class="logo_name">Takalo</div></a>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
@@ -60,13 +59,6 @@
        <span class="tooltip">Historique</span>
      </li>
      <li>
-       <a href="<?php echo site_url('Login/echangeEff'); ?>">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Echange</span>
-       </a>
-       <span class="tooltip">Setting</span>
-     </li>
-     <li>
        <a href="<?php echo site_url('Login/logout'); ?>">
          <i class='bx bx-cog' ></i>
          <span class="links_name">Deconnexion</span>
@@ -87,36 +79,46 @@
   </div>
   <!-- Manoratra ao @droite -->
   <section class="home-section">
-
-    <div class="container">
-      <div class="search-box" style="text-align: center;">
-          <h1 class="h2">Voici vos objets </h1>
-      </div><br>
-
-      <div class="images">
-          <form action="<?php echo site_url('Login/recherche'); ?>" class="d-flex" role="search" method="post">
-                <input class="form-control" type="search" name="solotena" placeholder="Search" aria-label="Search">
-                <select name="categorie" id="" class="form-control">
-                  <option hidden>Categorie</option>
-                  <?php for ($i=0; $i < count($categories); $i++) { ?>
-                     <option value="<?php echo $categories[$i]['idcategorie']; ?>"><?php echo $categories[$i]['nom']; ?></option>
-                 <?php } ?>
-                 
-                </select>
-                <input class="btn btn-outline-dark" type="submit" value="Search">
-          </form>
-      </div><br>  
-       
-      <div class="images">
-        <?php for ($i=0; $i < count($objets); $i++) { ?>
-            <div class="image-box" data-name="spiderman">
-            <img src="<?php echo site_url('assets/img/'.$objets[$i]['photo'].'') ?> " alt="">
-            <h6></h6>
-            <h6><?php echo $objets[$i]['nom']; ?><br><a href="<?php echo site_url('Login/modifobjet/'.$objets[$i]['idobjet'].''); ?>" class="btn btn-dark">Modifier</a></h6>
-        </div>
-      <?php  } ?>
+  <div class="search-box" style="text-align: center;">
+          <!-- <i class="bx bx-search"></i> -->
+          <h1 class="h2">Voici vos demandes</h1>
       </div>
+  <div class="container">
+    <?php for($i=0; $i < count($info); $i++) { ?>
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm"> 
+                <div class="row">
+                    <div class="col-md-1" style="text-align:center ;">
+                        <p><?php echo $info[$i]['send']; ?></p>
+                    </div>
+                    <div class="col-md-2" style="text-align:center ;">
+                        <img src="<?php echo site_url('assets/img/'.$info[$i]['photoreceive'].'') ?>" style="width: 100px;object-fit: contain;height: 62px;" alt="">
+                        <p class="text-center"><?php echo $info[$i]['objetreceive']; ?></p>
+                        
+                    </div>
+                    <div class="col-md-1"style="text-align:center ;">
+                        <p class="text-center">Echanger avec</p> 
+                    </div>
+                    <div class="col-md-2" style="text-align:center ;">
+                        <img src="<?php echo site_url('assets/img/'.$info[$i]['photosend'].'') ?>" style="width: 100px;object-fit: contain;height: 62px;" alt="">
+                        <p class="text-center"><?php echo $info[$i]['objetsend']; ?></p>
+                    </div>
+                    <div class="col-md-3" style="text-align:center ;">
+                        <p><?php echo $info[$i]['description']; ?></p>
+                    </div>
+                    <div class="col-md-3" style="text-align:center ;">
+                        <a href="<?php echo site_url('Login/accepteo/'.$info[$i]['iddemande']); ?>" class="btn btn-danger" style="height: 39px;width: 91px;">confirmer</a>
+                        <a href="<?php echo site_url('Login/refuseo/'.$info[$i]['iddemande']); ?>" class="btn btn-danger" style="height: 39px;width: 91px; margin-left: 10px;">Supprimer</a>
+                    </div>
+                    
+                </div>
+                
+                    
+            </li>
+        </ul>
+       <?php } ?>
     </div>
+ <!-- footer    -->
     <footer class="py-3 my-4" style="background-color: white;">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ETU001754 ANDRIAMIHARISOA Mananjara </a></li>
@@ -125,6 +127,7 @@
     </ul>
     <p class="text-center text-muted">&copy; 2023 Company, Inc</p>
     </footer>
+<!-- footer    -->
   </section>
 
   <script src="<?php echo site_url('assets/script/scriptMenu.js'); ?>"></script>

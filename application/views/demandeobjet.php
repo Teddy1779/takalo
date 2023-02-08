@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="en" dir="ltr">
@@ -87,36 +86,33 @@
   </div>
   <!-- Manoratra ao @droite -->
   <section class="home-section">
-
-    <div class="container">
-      <div class="search-box" style="text-align: center;">
-          <h1 class="h2">Voici vos objets </h1>
-      </div><br>
-
-      <div class="images">
-          <form action="<?php echo site_url('Login/recherche'); ?>" class="d-flex" role="search" method="post">
-                <input class="form-control" type="search" name="solotena" placeholder="Search" aria-label="Search">
-                <select name="categorie" id="" class="form-control">
-                  <option hidden>Categorie</option>
-                  <?php for ($i=0; $i < count($categories); $i++) { ?>
-                     <option value="<?php echo $categories[$i]['idcategorie']; ?>"><?php echo $categories[$i]['nom']; ?></option>
-                 <?php } ?>
-                 
-                </select>
-                <input class="btn btn-outline-dark" type="submit" value="Search">
-          </form>
-      </div><br>  
-       
-      <div class="images">
-        <?php for ($i=0; $i < count($objets); $i++) { ?>
-            <div class="image-box" data-name="spiderman">
-            <img src="<?php echo site_url('assets/img/'.$objets[$i]['photo'].'') ?> " alt="">
-            <h6></h6>
-            <h6><?php echo $objets[$i]['nom']; ?><br><a href="<?php echo site_url('Login/modifobjet/'.$objets[$i]['idobjet'].''); ?>" class="btn btn-dark">Modifier</a></h6>
-        </div>
-      <?php  } ?>
+  <div class="search-box" style="text-align: center;">
+          <!-- <i class="bx bx-search"></i> -->
+          <h1 class="h2">Voici vos demandes d'objet</h1>
       </div>
+  <div class="container">
+    <?php for($i=0; $i < count($dmd); $i++) { 
+        if($dmd[$i]['confirmation'] == "false"){
+         ?>
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm"> 
+                    <div class="col-md-1" style="text-align:center ;">
+                        <img src="<?php echo site_url('assets/img/'.$dmd[$i]['photo'].'');?>" alt="" style="    width: 68px;border-radius: 87px;height: 62px;">
+                    </div>
+                    <div class="col-md-3" 1style="text-align:center ;">
+                        <p><?php echo $dmd[$i]['nom'];?></p>
+                    </div>
+                    <div class="col-md-2" style="text-align:center ;">
+                        <p><?php echo $dmd[$i]['date_demande'];?></p>
+                    </div>
+                    <div class="col-md-2" style="text-align:center ;">
+                        <a href="<?php echo site_url('Login/deletedemandes/'.$dmd[$i]['iddemande'].'');?>" class="btn btn-danger" style="height: 39px;width: 91px; margin-left: 10px;">Supprimer</a>
+                    </div>
+            </li>
+        </ul>
+       <?php }} ?>
     </div>
+ <!-- footer    -->
     <footer class="py-3 my-4" style="background-color: white;">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ETU001754 ANDRIAMIHARISOA Mananjara </a></li>
@@ -125,6 +121,7 @@
     </ul>
     <p class="text-center text-muted">&copy; 2023 Company, Inc</p>
     </footer>
+<!-- footer    -->
   </section>
 
   <script src="<?php echo site_url('assets/script/scriptMenu.js'); ?>"></script>
