@@ -27,7 +27,7 @@
 <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
-      <a href="<?php echo site_url('Login/acceuil/'.$_SESSION['iduser']); ?>"><div class="logo_name">Takalo</div></a>
+      <a style="text-decoration: none;" href="<?php echo site_url('Login/acceuil/'.$_SESSION['iduser']); ?>"><div class="logo_name">Takalo</div></a>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
@@ -73,16 +73,6 @@
        </a>
        <span class="tooltip">Setting</span>
      </li>
-     <li class="profile">
-         <div class="profile-details">
-           <img src="profile.jpg" alt="profileImg">
-           <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
-           </div>
-         </div>
-         <i class='bx bx-log-out' id="log_out" ></i>
-     </li>
     </ul>
   </div>
   <!-- Manoratra ao @droite -->
@@ -112,7 +102,13 @@
             <div class="image-box" data-name="spiderman">
             <img src="<?php echo site_url('assets/img/'.$objets[$i]['photo'].'') ?> " alt="">
             <h6></h6>
-            <h6><?php echo $objets[$i]['nom']; ?><br><a href="<?php echo site_url('Login/modifobjet/'.$objets[$i]['idobjet'].''); ?>" class="btn btn-dark">Modifier</a></h6>
+            <h6><?php echo $objets[$i]['nom']; ?>_<?php echo $objets[$i]['prix']; ?>Ar<br><a href="<?php echo site_url('Login/modifobjet/'.$objets[$i]['idobjet'].''); ?>" class="btn btn-dark">Modifier</a>
+              <br>
+              <div style="    margin-top: 4px;">
+                <a href="<?php echo site_url('Login/dix/'.$objets[$i]['idobjet']); ?>" class="btn btn-success">10%</a>
+                <a href="" class="btn btn-dark">20%</a>
+              </div>
+            </h6>
         </div>
       <?php  } ?>
       </div>

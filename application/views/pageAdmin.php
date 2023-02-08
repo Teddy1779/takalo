@@ -26,7 +26,7 @@
 <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
-        <a href="<?php echo site_url('Login/acceuil/'.$_SESSION['iduser']); ?>"><div class="logo_name">Takalo</div></a>
+        <a style="text-decoration: none;" href="<?php echo site_url('Login/acceuil/'.$_SESSION['iduser']); ?>"><div class="logo_name">Takalo</div></a>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">      

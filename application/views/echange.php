@@ -35,9 +35,8 @@
                 <select name="outils" id="" class="form-control">
                     <?php
                         for($i=0;$i<count($outils);$i++) { ?>
-                            <option value="<?php echo $outils[$i]['idobjet'];?>"><?php echo $outils[$i]['nom'];?><?php echo $outils[$i]['idobjet'];?></option>
+                            <option value="<?php echo $outils[$i]['idobjet'];?>"><?php echo $outils[$i]['nom'];?></option>
                     <?php } ?>
-                    <option value="">Outils</option>
                 </select><br>
                 <a href="<?php echo site_url('Login/autre/'.$_SESSION['iduser'].'') ?>" class="btn btn-secondary" style="background-color: crimson;">Annuler</a>
                 <input type="submit" value="Demander l'echange" class="btn btn-primary" style="background-color: #11101d;"> 

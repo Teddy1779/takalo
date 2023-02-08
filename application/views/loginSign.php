@@ -18,8 +18,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="row">
         <div class="col-md-5">
             <div class="row" style="padding: 116px 38px;">
-                  <h1 class="h1">Bienvenu sur TAKALO</h1>
-                  <p class="h4">Veuiller inserez vos information de connexion s'il vous plait, sinon inscrivez vous.</p>
+                  <h1 class="h1" style="font-weight: bold;font-size: 39px;">Bienvenu sur TAKALO</h1>
+                  <p class="h4" style="font-size: 17px;">Veuiller inserez vos information de connexion s'il vous plait, vous pouvez essayer avec</p>
+                  <p style="font-size: 9px;">nom: jean mdp: jean</p>
             </div>
         </div>
         <div class="col-md-6">

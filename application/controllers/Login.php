@@ -14,6 +14,11 @@ class Login extends CI_Controller {
 		$this->load->view('loginSign',$data);
 	}
 
+	public function logout(){    
+        $this->session->unset_userdata('user');  
+		redirect("login");  
+    }
+
 	public function acceuil($id){
 		if($id==5){
 			$this->load->model('Model_model');
@@ -55,9 +60,8 @@ class Login extends CI_Controller {
 		$this->load->model('Login_model');	
 		$d=verify_sign($mdp,$mdp1);
 		if($d==0){
-			$this->session->set_userdata(array('nom'=>$nom));
 			$this->Login_model->insert_person($nom,$mdp);
-			redirect('Login/acceuil');
+			redirect('Login');
 		}else{
 			redirect('Login/error_sign');
 		}
@@ -148,7 +152,6 @@ class Login extends CI_Controller {
 		$this->load->view('historique',$data);
 	}
 
-//mitovy otran le pageadmin fa le version public makany am echangeEffectuer.php
 public function echangeEff(){
 	$this->load->model('Model_model');
 		$data=$this->Model_model->count_Inscrit();
@@ -162,9 +165,12 @@ public function echangeEff(){
 		$this->load->view('echangeEffectuer',$bigdata);	
 }
 
-	public function logout()  
-    {    
-        $this->session->unset_userdata('user');  
-        redirect("login");  
-    }
+	public function dix($idob){
+		$this->load->model('Model_model');
+		$data['objcompta'] = $this->Model_model->getdix($idob);
+		$this->load->view('dix',$data);
+	}
+
+
+
 }

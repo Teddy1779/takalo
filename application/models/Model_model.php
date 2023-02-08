@@ -59,7 +59,6 @@ class Model_model extends CI_Model{
 
     public function getdemand($receive){
         $sql="select * from demande where idreceive=".$receive." and confirmation = 'false'";
-        echo $sql;
         $i=0;
         foreach($sql->result_array() as $row){
             $tab[$i]['iddemande']=$row['iddemande'];
@@ -95,8 +94,6 @@ class Model_model extends CI_Model{
             $tab[$i]['confirmation'] = $row['confirmation'];
             $i++;
         }
-        echo 'huhuhu';
-        echo $tab[0]['nom'];
         return $tab;
     }
 
@@ -323,5 +320,28 @@ public function echange_obj($id1,$id2){
     $this->db->query($sql2);
 
 }
+    ///Ilay prom
+
+    public function getdix($idob){
+        $data = $this->infoobjet($idob);
+        $val1 = $data[0]['prix']+(($data[0]['prix'])/10) ;
+        $val2 = $data[0]['prix']-(($data[0]['prix'])/10);
+        
+        $query = $this->db->query("select * from objet where prix<".$val1." and prix>".$val2." and iduser!=".$_SESSION['iduser']."");
+        $tab = array();
+        $i = 0;
+        foreach($query->result_array() as $row){
+            $tab[$i]['nom'] = $row['nom'];
+            $tab[$i]['idcategorie'] = $row['idcategorie'];
+            $tab[$i]['description'] = $row['description'];
+            $tab[$i]['idobjet'] = $row['idobjet'];
+            $tab[$i]['photo'] = $row['photo'];
+            $tab[$i]['prix'] = $row['prix'];
+            $tab[$i]['iduser'] = $row['iduser'];
+            $i++;
+        }
+        return $tab;
+    }
+
 }
 ?>
